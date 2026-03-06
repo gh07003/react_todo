@@ -1,9 +1,19 @@
 import { useState } from "react";
+import Header from "./components/commons/Header";
+import { Route, Routes } from "react-router-dom";
+import TodoListPage from "./pages/TodoListPage";
+import TodoRegistPage from "./pages/TodoRegistPage";
+import TodoDetailPage from "./pages/TodoDetailPage";
 
 function App() {
   return (
     <div>
-      <h1>메인페이지</h1>
+      <Header />
+      <Routes>
+        <Route path="/" element={<TodoListPage />} />
+        <Route path="/regist" element={<TodoRegistPage />} />
+        <Route path="/detail/:todoNo" element={<TodoDetailPage />} />
+      </Routes>
     </div>
   );
 }

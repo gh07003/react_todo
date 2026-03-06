@@ -14,6 +14,6 @@ public class Todo {
 	private Integer todoNo;
 	private String todoContent;
 	private String todoWriter;
-	private Integer todoNone;
+	private Integer todoDone;
 	private String todoDate;
 }
