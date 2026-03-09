@@ -6,6 +6,7 @@ const TodoDetail = ({ todoNo }) => {
   const [todo, setTodo] = useState(null);
   const backServer = import.meta.env.VITE_BACKSERVER;
   useEffect(() => {
+    if (todoNo) {
     axios
       .get(`${backServer}/todos/${todoNo}`)
       .then((res) => {
@@ -15,7 +16,8 @@ const TodoDetail = ({ todoNo }) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+      }
+  }, [todoNo]);
 
   return (
     <div className={styles.detail_wrap}>
